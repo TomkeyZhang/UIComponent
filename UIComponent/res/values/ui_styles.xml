@@ -1,0 +1,8 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="UIPopupWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/ui_popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/ui_pophidden_anim</item>
+    </style>
+
+</resources>

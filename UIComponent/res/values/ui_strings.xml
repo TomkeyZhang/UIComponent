@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ui_loading_more">正在努力加载中...</string>
+    <string name="ui_loading_complete">已全部加载</string>
+    <string name="ui_loading_none">暂无可用数据</string>
+
+</resources>

@@ -1,0 +1,77 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="常用字体大小"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_micro 12sp"
+            android:textSize="@dimen/ui_text_micro" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_small 14sp"
+            android:textSize="@dimen/ui_text_small" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_medium1 18sp"
+            android:textSize="@dimen/ui_text_medium1" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_medium2 22sp"
+            android:textSize="@dimen/ui_text_medium2" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_large1 24sp"
+            android:textSize="@dimen/ui_text_large1" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_large2 26sp"
+            android:textSize="@dimen/ui_text_large2" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="标准字体 ui_text_large3 28sp"
+            android:textSize="@dimen/ui_text_large3" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="常用字体颜色"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="黑色字体 ui_font_black #222222 "
+            android:textColor="@color/ui_font_black" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="灰色字体 ui_font_grey #777777 "
+            android:textColor="@color/ui_font_grey" />
+
+        <TextView
+            style="@style/demo_text_size"
+            android:text="灰色字体30%透明度 ui_font_grey_white #4C222222 "
+            android:textColor="@color/ui_font_grey_white" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:layout_margin="0dip"
+    android:layout_weight="1.0"
+    android:clickable="true"
+    android:padding="0dip" >
+
+    <ToggleButton
+        android:id="@+id/ui_content_tb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dip"
+        android:background="@drawable/ui_selector_bg_select"
+        android:gravity="center"
+        android:paddingRight="16dip"
+        android:singleLine="true"
+        android:textColor="@color/ui_text"
+        android:textOff="@null"
+        android:textOn="@null" />
+
+    <ImageView
+        android:id="@+id/ui_arrow_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="8dip"
+        android:background="@null"
+        android:src="@drawable/ui_icon_arrow_screen_down" />
+
+    <View
+        android:id="@+id/ui_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_line_selected"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent" />
+
+</FrameLayout>

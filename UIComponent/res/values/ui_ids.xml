@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="ui_progress_view"  type="id"/>
+    <item name="ui_empty_view" type="id"/>
+    <item name="ui_content_view" type="id"/>
+    <item name="ui_error_view" type="id"/>
+
+</resources>

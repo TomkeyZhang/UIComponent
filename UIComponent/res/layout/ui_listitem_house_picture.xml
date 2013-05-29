@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/ui_listitem_image_margin_left"
+    android:layout_marginBottom="@dimen/ui_listitem_image_margin_bootom"
+    android:layout_marginRight="@dimen/ui_listitem_image_margin_right"
+    android:layout_marginTop="@dimen/ui_listitem_image_margin_top"
+    android:src="@drawable/ui_nopic_list" />

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 文字颜色 -->
+    <color name="ui_font_black">#222222</color>
+    <color name="ui_font_grey">#777777</color>
+    <color name="ui_font_grey_white">#4C222222</color>
+    <!-- 常用颜色 -->
+    <color name="ui_blue">#33B5E5</color>
+    <color name="ui_blue_deep">#0099CC</color>
+    <color name="ui_purple">#AA66CC</color>
+    <color name="ui_purple_deep">#9933CC</color>
+    <color name="ui_green">#99CC00</color>
+    <color name="ui_green_deep">#669900</color>
+    <color name="ui_orange">#FFBB33</color>
+    <color name="ui_orange_deep">#FF8800</color>
+    <color name="ui_red">#FF4444</color>
+    <color name="ui_red_deep">#CC0000</color>
+    <!-- 列表相关颜色 -->
+    <color name="ui_list_divider">#D3D3D3</color>
+    <color name="ui_listitem_bg">#F7F7F7</color>
+    <color name="ui_listitem_bg_selected">#E1E1E1</color>
+    <!-- 筛选标签+弹出框 -->
+    <color name="ui_bg_select">#F4F5F0</color>
+    <color name="ui_bg_select_unselected">#F0F0F0</color>
+    <color name="ui_bg_select_selected">#E4E3DE</color>
+    <color name="ui_text_select_grey_deep">#333333</color>
+    <color name="ui_text_select_grey_light">#666666</color>
+    <color name="ui_select_divider">#DEDEDE</color>
+    <color name="ui_bg_select_window">#29000000</color>
+    <color name="ui_bg_select_right">#EDEDED</color>
+    <color name="ui_bg_select_left">#FAF9F7</color>
+	<!-- slidingtab -->
+	<color name="ui_slidingtab_pressed">#6633B5E5</color>
+</resources>
