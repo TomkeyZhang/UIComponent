@@ -1,5 +1,4 @@
-package com.anjuke.uicomponent.list;
-
+package com.anjuke.anjukelib.uicomponent.list;
 
 import com.anjuke.uicomponent.R;
 
@@ -24,8 +23,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
- * 修改自好租App 有下拉刷新的listview todo:把图片、文字定义提取放到组件外可自定义
- * 
+ * 有下拉刷新,底部加载更多的listview,支持给listview加header
+ * <br>修改自好租App
  */
 public class RefreshLoadMoreListView extends ListView implements OnScrollListener {
 

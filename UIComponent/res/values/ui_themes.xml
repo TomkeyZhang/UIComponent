@@ -1,0 +1,28 @@
+<resources>
+
+    <style name="AnjukeTheme" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/Widget.Anjuke.ActionBar</item>
+        <item name="actionBarItemBackground">@drawable/ui_selector_bg_actionbar_item</item>
+        <item name="itemTextAppearance">@style/TextAppearance.Anjuke.Widget.DropDownItem</item>
+        <item name="popupMenuStyle">@style/Widget.Sherlock.ListPopupWindow</item>
+        <item name="actionDropDownStyle">@style/Widget.Sherlock.Spinner.DropDown.ActionBar</item>
+        <item name="dropDownListViewStyle">@style/Widget.Anjuke.ListView.DropDown</item>
+        <item name="searchDropdownBackground">@drawable/abs__search_dropdown_dark</item>
+        <item name="searchAutoCompleteTextView">@style/Widget.Sherlock.SearchAutoCompleteTextView</item>
+    </style>
+
+    <style name="Widget.Anjuke.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="background">@color/ui_orange_deep</item>
+        <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title.Inverse</item>
+    </style>
+
+    <style name="TextAppearance.Anjuke.Widget.DropDownItem" parent="@style/TextAppearance.Sherlock.Widget.DropDownItem">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+    </style>
+
+    <style name="Widget.Anjuke.ListView.DropDown" parent="Widget.Sherlock.ListView.DropDown">
+        <item name="android:divider">#4F4F4F</item>
+        <item name="android:dividerHeight">@dimen/ui_listitem_divider_height</item>
+    </style>
+
+</resources>

@@ -4,7 +4,7 @@
  * SelectBar.java
  *
  */
-package com.anjuke.uicomponent.select;
+package com.anjuke.anjukelib.uicomponent.select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,25 +20,27 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.anjuke.anjukelib.uicomponent.select.SelectTab.OnCheckedListener;
+import com.anjuke.anjukelib.uicomponent.select.listener.OnGroupItemClickListener;
+import com.anjuke.anjukelib.uicomponent.select.listener.OnItemClickListener;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.select.SelectGroupWrapper.OnGroupItemClickListener;
-import com.anjuke.uicomponent.select.SelectItemAdpater.OnItemClickListener;
-import com.anjuke.uicomponent.select.SelectTab.OnCheckedListener;
 
 /**
+ * 筛选选择条，可作为自定义View控件加入到xml布局文件中
+ * 
  * @author qitongzhang (qitongzhang@anjuke.com)
  * @date 2013-5-22
  */
 public class SelectBar extends LinearLayout implements OnCheckedListener {
-    private int dividerColor = 0x1A000000;
-    private int dividerPadding = 0;
-    private int dividerHeight = 1;
+    private int mDividerColor = 0x1A000000;
+    private int mDividerPadding = 0;
+    private int mDividerHeight = 1;
 
-    private SelectWindow selectWindow;
-    private Paint dividerPaint;
-    private List<SelectTab> items = new ArrayList<SelectTab>();
-    private int arrowWith;
-    private int indicatorColor;
+    private SelectWindow mSelectWindow;
+    private Paint mDividerPaint;
+    private List<SelectTab> mItems = new ArrayList<SelectTab>();
+    private int mArrowWith;
+    private int mIndicatorColor;
 
     public SelectBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -52,38 +54,63 @@ public class SelectBar extends LinearLayout implements OnCheckedListener {
 
     private void init() {
         setWillNotDraw(false);
-        dividerPaint = new Paint();
-        dividerPaint.setAntiAlias(true);
-        dividerPaint.setStrokeWidth(dividerHeight);
-        dividerPaint.setColor(dividerColor);
-        setPadding(0, 0, 0, dividerHeight);
+        mDividerPaint = new Paint();
+        mDividerPaint.setAntiAlias(true);
+        mDividerPaint.setStrokeWidth(mDividerHeight);
+        mDividerPaint.setColor(mDividerColor);
+        setPadding(0, 0, 0, mDividerHeight);
         Options options = new Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(getResources(), R.drawable.ui_icon_arrow_choose, options);
-        arrowWith = options.outWidth;
-    }
-    public void setIndicatorColor(int indicatorColor) {
-        this.indicatorColor = indicatorColor;
-    }
-    public void addTabSingleList(String title, List<String> obejcts, OnItemClickListener itemClickListener) {
-        createTab(title, wrapSingleList(obejcts, itemClickListener));
+        mArrowWith = options.outWidth;
     }
 
+    /**
+     * 设置选中下划线的颜色
+     * 
+     * @param indicatorColor
+     */
+    public void setIndicatorColor(int indicatorColor) {
+        this.mIndicatorColor = indicatorColor;
+    }
+
+    /**
+     * 添加单个筛选列表
+     * 
+     * @param title
+     * @param items
+     *            列表项显示文本
+     * @param itemClickListener
+     */
+    public void addTabSingleList(String title, List<String> items, OnItemClickListener itemClickListener) {
+        createTab(title, wrapSingleList(items, itemClickListener));
+    }
+
+    /**
+     * 添加两个筛选列表
+     * 
+     * @param title
+     * @param groups
+     *            列表组显示文本
+     * @param items
+     *            列表组下各个列表项显示文本
+     * @param groupItemClickListener
+     */
     public void addTabDoubleList(String title, List<String> groups, List<List<String>> items,
             OnGroupItemClickListener groupItemClickListener) {
         createTab(title, wrapDoubleList(groups, items, groupItemClickListener));
     }
 
     private void createTab(String title, View popView) {
-        SelectTab item = new SelectTab(getContext(), popView, this,indicatorColor);
+        SelectTab item = new SelectTab(getContext(), popView, this, mIndicatorColor);
         item.setText(title);
         addView(item.getItemView(), new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f));
-        items.add(item);
+        mItems.add(item);
     }
 
     private View wrapDoubleList(List<String> groups, List<List<String>> items,
             OnGroupItemClickListener groupItemClickListener) {
-        SelectGroupWrapper wrap = new SelectGroupWrapper(getContext(), groups, items, indicatorColor);
+        SelectGroupWrapper wrap = new SelectGroupWrapper(getContext(), groups, items, mIndicatorColor);
         wrap.setGroupItemClickListener(groupItemClickListener);
         return wrap.getRoot();
     }
@@ -99,16 +126,16 @@ public class SelectBar extends LinearLayout implements OnCheckedListener {
     }
 
     private void showPopup(SelectTab selectedTab) {
-        if (selectWindow == null) {
-            selectWindow = new SelectWindow(getContext());
+        if (mSelectWindow == null) {
+            mSelectWindow = new SelectWindow(getContext());
         }
-        if(selectWindow.isShowing()){
-            selectWindow.hide();
+        if (mSelectWindow.isShowing()) {
+            mSelectWindow.hide();
         }
         View itemView = selectedTab.getItemView();
-        selectWindow.setContentView(selectedTab.getPopView(), itemView.getRight() - itemView.getWidth() / 2 - arrowWith
-                / 2 - selectWindow.getPaddingLeft());
-        selectWindow.show(this);
+        mSelectWindow.setContentView(selectedTab.getPopView(), itemView.getRight() - itemView.getWidth() / 2
+                - mArrowWith / 2 - mSelectWindow.getPaddingLeft());
+        mSelectWindow.show(this);
     }
 
     @Override
@@ -123,31 +150,33 @@ public class SelectBar extends LinearLayout implements OnCheckedListener {
             return;
         }
         final int height = getHeight();
-        dividerPaint.setColor(dividerColor);
+        mDividerPaint.setColor(mDividerColor);
         for (int i = 0; i < getChildCount() - 1; i++) {
             View tab = getChildAt(i);
-            tab.setPadding(0, 0, dividerHeight, 0);
-            canvas.drawLine(tab.getRight() - dividerHeight, dividerPadding, tab.getRight() - dividerHeight, height
-                    - dividerPadding, dividerPaint);
+            tab.setPadding(0, 0, mDividerHeight, 0);
+            canvas.drawLine(tab.getRight() - mDividerHeight, mDividerPadding, tab.getRight() - mDividerHeight, height
+                    - mDividerPadding, mDividerPaint);
         }
-        canvas.drawLine(100, dividerPadding, 100, height - dividerPadding, dividerPaint);
-        canvas.drawLine(0, height - dividerHeight, getWidth(), height - dividerHeight, dividerPaint);
+        canvas.drawLine(100, mDividerPadding, 100, height - mDividerPadding, mDividerPaint);
+        canvas.drawLine(0, height - mDividerHeight, getWidth(), height - mDividerHeight, mDividerPaint);
     }
 
     public void hidePopup() {
-        if (selectWindow != null & selectWindow.isShowing()) {
-            selectWindow.hide();
+        if (mSelectWindow != null & mSelectWindow.isShowing()) {
+            mSelectWindow.hide();
         }
-        for (SelectTab tab : items) {
+        for (SelectTab tab : mItems) {
             tab.setChecked(false);
         }
     }
-    public boolean isShowingPopup(){
-        return selectWindow!=null&&selectWindow.isShowing();
+
+    public boolean isShowingPopup() {
+        return mSelectWindow != null && mSelectWindow.isShowing();
     }
+
     @Override
     public void onCheckedChanged(SelectTab selectedTab, boolean isChecked) {
-        for (SelectTab tab : items) {
+        for (SelectTab tab : mItems) {
             if (tab != selectedTab) {
                 tab.setChecked(false);
             } else {
@@ -157,7 +186,7 @@ public class SelectBar extends LinearLayout implements OnCheckedListener {
         if (isChecked) {
             showPopup(selectedTab);
         } else {
-            selectWindow.hide();
+            mSelectWindow.hide();
         }
     }
 }

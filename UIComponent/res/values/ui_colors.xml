@@ -16,6 +16,9 @@
     <color name="ui_orange_deep">#FF8800</color>
     <color name="ui_red">#FF4444</color>
     <color name="ui_red_deep">#CC0000</color>
+    
+    <!-- ActionBar -->
+    <color name="ui_bg_actionbar_selected">#19000000</color>
     <!-- 列表相关颜色 -->
     <color name="ui_list_divider">#D3D3D3</color>
     <color name="ui_listitem_bg">#F7F7F7</color>

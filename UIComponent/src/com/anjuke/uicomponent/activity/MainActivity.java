@@ -16,12 +16,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.anjuke.anjukelib.uicomponent.slidingtab.PagerSlidingTabStrip;
 import com.anjuke.uicomponent.R;
 import com.anjuke.uicomponent.fragment.ColorFragment;
 import com.anjuke.uicomponent.fragment.SelectFragment;
 import com.anjuke.uicomponent.fragment.ProgressFragment;
 import com.anjuke.uicomponent.fragment.RefreshListFragment;
-import com.anjuke.uicomponent.slidingtab.PagerSlidingTabStrip;
 
 public class MainActivity extends SherlockFragmentActivity implements OnPageChangeListener {
     private PagerSlidingTabStrip tabs;
@@ -43,7 +44,11 @@ public class MainActivity extends SherlockFragmentActivity implements OnPageChan
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
     }
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getSupportMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
     public void onClick(View v) {
         startActivity(new Intent(this, SelectBarActivity.class).putExtra("color",
                 Color.parseColor(v.getTag().toString())));

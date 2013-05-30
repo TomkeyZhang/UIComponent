@@ -6,8 +6,8 @@
  */
 package com.anjuke.uicomponent.activity;
 
+import com.anjuke.anjukelib.uicomponent.progress.ProgressWrapper;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.progress.ProgressWrapper;
 
 import android.app.Activity;
 import android.os.Bundle;

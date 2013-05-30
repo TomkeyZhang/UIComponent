@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.anjuke.uicomponent.slidingtab.PagerSlidingTabStrip
+    <com.anjuke.anjukelib.uicomponent.slidingtab.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dp"

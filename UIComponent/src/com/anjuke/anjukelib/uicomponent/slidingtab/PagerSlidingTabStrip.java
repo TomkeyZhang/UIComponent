@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.anjuke.uicomponent.slidingtab;
+package com.anjuke.anjukelib.uicomponent.slidingtab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -43,9 +43,11 @@ import com.anjuke.uicomponent.R;
 
 
 /**
- * pull from github
+ * 带滑动效果的Tab
+ * pull from github：https://github.com/astuetz/PagerSlidingTabStrip?source=cc
  * 
- * @modified by tomkeyzhang
+ * @modified by qitongzhang (qitongzhang@anjuke.com)
+ * @date 2013-5-22
  * 
  */
 public class PagerSlidingTabStrip extends HorizontalScrollView {

@@ -9,9 +9,9 @@ package com.anjuke.uicomponent.fragment;
 import java.util.ArrayList;
 import java.util.Map;
 
+import com.anjuke.anjukelib.uicomponent.progress.ProgressWrapper;
 import com.anjuke.uicomponent.R;
 import com.anjuke.uicomponent.activity.ProgressActivity;
-import com.anjuke.uicomponent.progress.ProgressWrapper;
 
 import android.content.Intent;
 import android.os.Bundle;

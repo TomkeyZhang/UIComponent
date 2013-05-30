@@ -19,10 +19,10 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
+import com.anjuke.anjukelib.uicomponent.select.SelectBar;
+import com.anjuke.anjukelib.uicomponent.select.listener.OnGroupItemClickListener;
+import com.anjuke.anjukelib.uicomponent.select.listener.OnItemClickListener;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.select.SelectBar;
-import com.anjuke.uicomponent.select.SelectGroupWrapper.OnGroupItemClickListener;
-import com.anjuke.uicomponent.select.SelectItemAdpater.OnItemClickListener;
 
 /**
  * @author qitongzhang (qitongzhang@anjuke.com)

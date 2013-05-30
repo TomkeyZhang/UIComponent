@@ -1,0 +1,23 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.    -->
+    <style name="AnjukeTheme" parent="Theme.Sherlock.Light">
+        <item name="android:actionBarStyle">@style/Widget.Anjuke.ActionBar</item>
+        <item name="android:actionBarItemBackground">@drawable/ui_selector_bg_actionbar_item</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance.Anjuke.Widget.DropDownItem</item>
+        <item name="android:popupMenuStyle">@style/Widget.Sherlock.ListPopupWindow</item>
+        <item name="android:actionDropDownStyle">@style/Widget.Sherlock.Spinner.DropDown.ActionBar</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.Anjuke.ListView.DropDown</item>
+        <item name="searchDropdownBackground">@drawable/abs__search_dropdown_dark</item>
+        <item name="searchAutoCompleteTextView">@style/Widget.Sherlock.SearchAutoCompleteTextView</item>
+    </style>
+
+    <style name="Widget.Anjuke.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="android:background">@color/ui_orange_deep</item>
+        <item name="android:titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title.Inverse</item>
+    </style>
+
+</resources>

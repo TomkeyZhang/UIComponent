@@ -19,9 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SimpleAdapter;
 
+import com.anjuke.anjukelib.uicomponent.list.RefreshLoadMoreListView;
+import com.anjuke.anjukelib.uicomponent.list.RefreshLoadMoreListView.OnRefreshListener;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.list.RefreshLoadMoreListView;
-import com.anjuke.uicomponent.list.RefreshLoadMoreListView.OnRefreshListener;
 
 /**
  * @author qitongzhang (qitongzhang@anjuke.com)

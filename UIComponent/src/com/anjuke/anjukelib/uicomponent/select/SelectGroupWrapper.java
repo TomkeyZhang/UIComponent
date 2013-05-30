@@ -4,7 +4,7 @@
  * SelectGroupWrap.java
  *
  */
-package com.anjuke.uicomponent.select;
+package com.anjuke.anjukelib.uicomponent.select;
 
 import java.util.List;
 
@@ -12,21 +12,23 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ListView;
 
+import com.anjuke.anjukelib.uicomponent.select.listener.OnGroupItemClickListener;
+import com.anjuke.anjukelib.uicomponent.select.listener.OnItemClickListener;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.select.SelectItemAdpater.OnItemClickListener;
 
 /**
+ * 内部使用
  *@author qitongzhang (qitongzhang@anjuke.com)
  *@date 2013-5-28
  */
-public class SelectGroupWrapper implements OnItemClickListener{
+class SelectGroupWrapper implements OnItemClickListener{
     private SelectItemAdpater mItemAdapter;
     private SelectItemAdpater mGroupAdapter;
     private ListView mItemListView;
     private ListView mGroupListView;
     private List<List<String>> mItems;
     private View mRoot;
-    private OnGroupItemClickListener groupItemClickListener;
+    private OnGroupItemClickListener mGroupItemClickListener;
     private Context mContext;
 
     public SelectGroupWrapper(Context context,List<String> groups,List<List<String>> items,int lineColor) {
@@ -49,19 +51,17 @@ public class SelectGroupWrapper implements OnItemClickListener{
         return mRoot;
     }
     public void setGroupItemClickListener(OnGroupItemClickListener groupItemClickListener) {
-        this.groupItemClickListener = groupItemClickListener;
+        this.mGroupItemClickListener = groupItemClickListener;
         mItemAdapter.setItemClickListener(groupItemClickListener);
     }
     @Override
     public void OnItemClick(ListView lv,String item, int position) {
         mItemAdapter = new SelectItemAdpater(mContext, R.layout.ui_listitem_checked, mItems.get(position));
         mItemAdapter.setListView(mItemListView);
-        mItemAdapter.setItemClickListener(groupItemClickListener);
+        mItemAdapter.setItemClickListener(mGroupItemClickListener);
         mItemListView.setAdapter(mItemAdapter);
-        if(groupItemClickListener!=null)
-            groupItemClickListener.OnGroupItemClick(lv, item, position);
+        if(mGroupItemClickListener!=null)
+            mGroupItemClickListener.OnGroupItemClick(lv, item, position);
     }
-    public static interface OnGroupItemClickListener extends OnItemClickListener{
-        public void OnGroupItemClick(ListView lv,String item, int position);
-    }
+    
 }

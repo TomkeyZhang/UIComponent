@@ -1,9 +1,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:id="@+id/action_more"
+        android:icon="@drawable/abs__ic_menu_moreoverflow_normal_holo_dark"
+        android:showAsAction="always"
+        android:title="">
+        <menu>
+            <group android:id="@+id/action_group" >
+                <item
+                    android:id="@+id/action_scroe"
+                    android:showAsAction="never"
+                    android:title="给手机金铺打分"/>
+                <item
+                    android:id="@+id/action_feedback"
+                    android:showAsAction="never"
+                    android:title="意见反馈"/>
+                <item
+                    android:id="@+id/action_about_us"
+                    android:showAsAction="never"
+                    android:title="关于我们"/>
+                <item
+                    android:id="@+id/action_app_suggest"
+                    android:showAsAction="never"
+                    android:title="应用推荐"/>
+            </group>
+        </menu>
+    </item>
 
 </menu>

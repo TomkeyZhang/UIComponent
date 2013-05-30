@@ -1,4 +1,4 @@
-package com.anjuke.uicomponent.select;
+package com.anjuke.anjukelib.uicomponent.select;
 
 import com.anjuke.uicomponent.R;
 
@@ -23,18 +23,18 @@ import android.app.Activity;
 import android.content.Context;
 
 /**
- * Custom popup window.
+ * select包内部使用
  * 
  * @author Lorensius W. L. T <lorenz@londatiga.net>
  * 
  */
-public class SelectWindow {
+class SelectWindow {
     private Context mContext;
     private PopupWindow mWindow;
     private LinearLayout mRootLayout;
     private View mContentView;
-    private DisplayMetrics dm;
-    private ImageView arrowIV;
+    private DisplayMetrics mDm;
+    private ImageView mArrowIV;
 
     /**
      * Constructor.
@@ -44,10 +44,10 @@ public class SelectWindow {
      */
     public SelectWindow(Context context) {
         mContext = context;
-        dm = new DisplayMetrics();
-        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
+        mDm = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(mDm);
         mRootLayout = (LinearLayout) View.inflate(mContext, R.layout.ui_window_select, null);
-        arrowIV = (ImageView) mRootLayout.findViewById(R.id.ui_arrow_iv);
+        mArrowIV = (ImageView) mRootLayout.findViewById(R.id.ui_arrow_iv);
         mWindow = new PopupWindow(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         mWindow.setAnimationStyle(R.style.UIPopupWindowAnimation);
 //        mWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -57,10 +57,10 @@ public class SelectWindow {
     }
 
     public int dipToPx(int dip) {
-        if (dm == null) {
+        if (mDm == null) {
             return -1;
         }
-        return (int) (dip * dm.density + 0.5f);
+        return (int) (dip * mDm.density + 0.5f);
     }
 
     public int getPaddingLeft() {
@@ -96,9 +96,9 @@ public class SelectWindow {
             mRootLayout.removeView(mContentView);
         }
         mContentView = contentView;
-        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) arrowIV.getLayoutParams();
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mArrowIV.getLayoutParams();
         lp.leftMargin = leftMargin;
-        arrowIV.setLayoutParams(lp);
+        mArrowIV.setLayoutParams(lp);
         mRootLayout.addView(mContentView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
     }
