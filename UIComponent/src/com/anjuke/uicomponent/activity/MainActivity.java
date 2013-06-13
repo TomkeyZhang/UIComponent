@@ -17,12 +17,14 @@ import android.widget.FrameLayout;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
+import com.androidquery.util.AQUtility;
 import com.anjuke.anjukelib.uicomponent.slidingtab.PagerSlidingTabStrip;
 import com.anjuke.uicomponent.R;
-import com.anjuke.uicomponent.fragment.ColorFragment;
-import com.anjuke.uicomponent.fragment.SelectFragment;
-import com.anjuke.uicomponent.fragment.ProgressFragment;
-import com.anjuke.uicomponent.fragment.RefreshListFragment;
+import com.anjuke.uicomponent.fragment.tab.ColorSelectFragment;
+import com.anjuke.uicomponent.fragment.tab.FontFragment;
+import com.anjuke.uicomponent.fragment.tab.PhotoFragment;
+import com.anjuke.uicomponent.fragment.tab.ProgressFragment;
+import com.anjuke.uicomponent.fragment.tab.RefreshListFragment;
 
 public class MainActivity extends SherlockFragmentActivity implements OnPageChangeListener {
     private PagerSlidingTabStrip tabs;
@@ -44,11 +46,13 @@ public class MainActivity extends SherlockFragmentActivity implements OnPageChan
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     public void onClick(View v) {
         startActivity(new Intent(this, SelectBarActivity.class).putExtra("color",
                 Color.parseColor(v.getTag().toString())));
@@ -71,7 +75,7 @@ public class MainActivity extends SherlockFragmentActivity implements OnPageChan
 
     private class TabPagerAdapter extends FragmentPagerAdapter {
         private List<Fragment> fragments = new ArrayList<Fragment>();
-        private final String[] titles = new String[] { "文字", "筛选", "列表" ,"UI状态"};
+        private final String[] titles = new String[] { "字体", "颜色及筛选", "列表", "UI状态", "滑动" };
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -87,16 +91,19 @@ public class MainActivity extends SherlockFragmentActivity implements OnPageChan
             Fragment fragment = null;
             switch (position) {
             case 0:
-                fragment = new SelectFragment();
+                fragment = new FontFragment();
                 break;
             case 1:
-                fragment = new ColorFragment();
+                fragment = new ColorSelectFragment();
                 break;
             case 2:
                 fragment = new RefreshListFragment();
                 break;
             case 3:
                 fragment = new ProgressFragment();
+                break;
+            case 4:
+                fragment = new PhotoFragment();
                 break;
             default:
                 break;

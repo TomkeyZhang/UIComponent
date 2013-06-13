@@ -4,7 +4,7 @@
  * ProgressFragment.java
  *
  */
-package com.anjuke.uicomponent.fragment;
+package com.anjuke.uicomponent.fragment.tab;
 
 import java.util.ArrayList;
 import java.util.Map;

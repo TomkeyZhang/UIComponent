@@ -6,12 +6,14 @@
  */
 package com.anjuke.uicomponent.activity;
 
+import com.anjuke.anjukelib.uicomponent.activity.BundleActivity;
 import com.anjuke.anjukelib.uicomponent.progress.ProgressWrapper;
 import com.anjuke.uicomponent.R;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -20,7 +22,7 @@ import android.view.ViewGroup;
  *@author qitongzhang (qitongzhang@anjuke.com)
  *@date 2013-5-29
  */
-public class ProgressActivity extends Activity implements OnClickListener {
+public class ProgressActivity extends BundleActivity implements OnClickListener {
     private Handler handler = new Handler();
     private ProgressWrapper wrapper;
     @Override
@@ -28,7 +30,7 @@ public class ProgressActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
         wrapper = new ProgressWrapper(this);
-        switch (getIntent().getIntExtra("position", 0)) {
+        switch (getIntentExtras().getInt("position", 0)) {
         case 0:
             wrapper.showProgress();
             findViewById(R.id.ui_empty_view).setOnClickListener(this);

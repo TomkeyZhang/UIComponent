@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.anjuke.anjukelib.uicomponent.photo.PhotoGallery
+            android:id="@+id/ui_photo_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:background="@drawable/ui_photo_bg" />
+
+        <com.anjuke.anjukelib.uicomponent.photo.PhotoPoint
+            android:id="@+id/ui_photo_point"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@id/ui_photo_gallery" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_below="@id/ui_photo_gallery"
+            android:background="@color/ui_blue" />
+    </RelativeLayout>
+
+</ScrollView>

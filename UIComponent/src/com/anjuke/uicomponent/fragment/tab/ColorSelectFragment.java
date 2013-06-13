@@ -1,10 +1,10 @@
 /**
  *
  * Copyright 2013 Anjuke. All rights reserved.
- * HomeFragment.java
+ * RegionFragment.java
  *
  */
-package com.anjuke.uicomponent.fragment;
+package com.anjuke.uicomponent.fragment.tab;
 
 import com.anjuke.uicomponent.R;
 
@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 
 /**
  * @author qitongzhang (qitongzhang@anjuke.com)
- * @date 2013-5-28
+ * @date 2013-5-22
  */
-public class SelectFragment extends Fragment {
+public class ColorSelectFragment extends Fragment {
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_font, null);
-    };
+        return inflater.inflate(R.layout.fragment_color, null);
+    }
+    
 }

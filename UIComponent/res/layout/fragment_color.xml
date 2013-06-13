@@ -108,6 +108,43 @@
                 android:tag="@color/ui_red_deep"
                 android:text="ui_red_deep #CC0000" />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用边距"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <View
+                android:layout_width="@dimen/ui_spacing_micro"
+                android:layout_height="50dp"
+                android:background="@color/ui_blue" />
+
+            <View
+                android:layout_width="@dimen/ui_spacing_small"
+                android:layout_height="50dp"
+                android:background="@color/ui_green" />
+
+            <View
+                android:layout_width="@dimen/ui_spacing_medium"
+                android:layout_height="50dp"
+                android:background="@color/ui_orange" />
+
+            <View
+                android:layout_width="@dimen/ui_spacing_large"
+                android:layout_height="50dp"
+                android:background="@color/ui_red" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ui_spacing_micro 4dp\n ui_spacing_small 8dp\n ui_spacing_medium 12dp\n ui_spacing_large 16dp" />
     </LinearLayout>
 
 </ScrollView>
