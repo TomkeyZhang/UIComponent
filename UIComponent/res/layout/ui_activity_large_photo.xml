@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+
+    <com.anjuke.anjukelib.uicomponent.photo.EndlessViewPager
+        android:id="@+id/ui_photo_evp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Gallery
+        android:id="@+id/ui_title_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:background="@color/ui_grey"
+        android:gravity="center_vertical"
+        android:spacing="100dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/ui_spacing_small" >
+
+        <ImageButton
+            android:id="@+id/ui_call_phone_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/ui_count_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:text="1/7"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ui_text_large1" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ui_directive_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/ui_directive_margin"
+        android:maxWidth="@dimen/ui_directive_margin"
+        android:src="@drawable/ui_directive" />
+
+</FrameLayout>

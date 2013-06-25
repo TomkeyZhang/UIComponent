@@ -6,6 +6,8 @@
  */
 package com.anjuke.anjukelib.uicomponent.activity;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -17,7 +19,7 @@ import android.support.v4.app.FragmentActivity;
  * @author qitongzhang (qitongzhang@anjuke.com)
  * @date 2013-5-31
  */
-public class BundleActivity extends FragmentActivity {
+public class BundleActivity extends SherlockFragmentActivity {
     private Bundle savedState;
 
     protected void onCreate(Bundle savedState) {

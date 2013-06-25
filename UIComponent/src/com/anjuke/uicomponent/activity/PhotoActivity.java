@@ -26,6 +26,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.AQUtility;
+import com.anjuke.anjukelib.uicomponent.activity.LargePhotoActivity;
 import com.anjuke.anjukelib.uicomponent.photo.EndlessCircleIndicator;
 import com.anjuke.anjukelib.uicomponent.photo.EndlessViewPager;
 import com.anjuke.anjukelib.uicomponent.photo.PhotoGallery;
@@ -80,12 +81,7 @@ public class PhotoActivity extends SherlockFragmentActivity {
 			aq = new AQuery(view);
 			gallery = (PhotoGallery) view.findViewById(R.id.ui_photo_gallery);
 			point = (PhotoPoint) view.findViewById(R.id.ui_photo_point);
-			gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-					startActivity(LargePhotoActivity.getLaunchIntent(getActivity(), position));
-				}
-			});
+			
 			gallery.setLoader(new PhotoLoader());
 			gallery.setOnItemSelectedListener(new OnItemSelectedListener() {
 				@Override
@@ -102,10 +98,16 @@ public class PhotoActivity extends SherlockFragmentActivity {
 				@Override
 				public void callback(String url, JSONObject object, AjaxStatus status) {
 					Log.d("zqt", object.toString());
-					List<String> photos = JSON.parseArray(object.optJSONObject("detail").optString("photos"), String.class);
+					final List<String> photos = JSON.parseArray(object.optJSONObject("detail").optString("photos"), String.class);
 					gallery.setData(photos);
 					gallery.setSelection(photos.size() * 5);
 					point.setPointCount(photos.size());
+					gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+						@Override
+						public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+							LargePhotoActivity.start(getActivity(), TestLargePhotoActivity1.class, position%photos.size());
+						}
+					});
 				}
 			});
 		}
@@ -129,12 +131,12 @@ public class PhotoActivity extends SherlockFragmentActivity {
 				@Override
 				public void callback(String url, JSONObject object, AjaxStatus status) {
 					Log.d("zqt", object.toString());
-					List<String> photos = JSON.parseArray(object.optJSONObject("detail").optString("photos"), String.class);
+					final List<String> photos = JSON.parseArray(object.optJSONObject("detail").optString("photos"), String.class);
 					fixedViewPager.setData(getActivity().getSupportFragmentManager(), photos, new PhotoLoader(), new IPhotoItemClick() {
 
 						@Override
 						public void onItemClick(String url, int position) {
-							startActivity(LargePhotoActivity.getLaunchIntent(getActivity(), position));
+							LargePhotoActivity.start(getActivity(), TestLargePhotoActivity1.class, position%photos.size());
 						}
 					});
 					fixedIndicator.setCount(photos.size());

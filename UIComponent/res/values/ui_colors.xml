@@ -16,6 +16,7 @@
     <color name="ui_orange_deep">#FF8800</color>
     <color name="ui_red">#FF4444</color>
     <color name="ui_red_deep">#CC0000</color>
+    <color name="ui_grey">#333333</color>
     
     <!-- ActionBar -->
     <color name="ui_bg_actionbar_selected">#19000000</color>

@@ -66,7 +66,7 @@ public class EndlessViewPager extends ViewPager implements OnGestureListener {
 
 	@Override
 	public boolean onSingleTapUp(MotionEvent e) {
-		if (mItemClick != null) {
+		if (mItemClick != null&&list!=null) {
 			int position = getCurrentItem() % list.size();
 			mItemClick.onItemClick(list.get(position), position);
 		}
@@ -83,7 +83,9 @@ public class EndlessViewPager extends ViewPager implements OnGestureListener {
 		setAdapter(new EndlessFragmentPagerAdapter(fm, list, loader, itemResId));
 		setCurrentItem(item, false);
 	}
-
+	public void setItemClick(IPhotoItemClick itemClick) {
+		this.mItemClick=itemClick;
+	}
 	@Override
 	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 		return false;

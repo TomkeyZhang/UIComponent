@@ -22,4 +22,6 @@
 	<dimen name="ui_listitem_image_margin_right">@dimen/ui_spacing_large</dimen>
 	<dimen name="ui_listitem_divider_height">1px</dimen>
 	<dimen name="ui_listitem_house_pic_height">82dp</dimen>
+	<!-- 大图浏览相关 -->
+	<dimen name="ui_directive_margin">30dp</dimen>
 </resources>

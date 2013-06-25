@@ -26,7 +26,8 @@
         <activity android:name="com.anjuke.uicomponent.activity.SelectBarActivity" />
         <activity android:name="com.anjuke.uicomponent.activity.ProgressActivity" />
         <activity android:name="com.anjuke.uicomponent.activity.PhotoActivity" />
-        <activity android:name="com.anjuke.uicomponent.activity.LargePhotoActivity" />
+        <activity android:name="com.anjuke.uicomponent.activity.TestLargePhotoActivity1" />
+        <activity android:name="com.anjuke.anjukelib.uicomponent.activity.LargePhotoActivity" />
     </application>
 
 </manifest>
