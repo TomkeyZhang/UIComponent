@@ -11,7 +11,8 @@
 	<dimen name="ui_spacing_micro">4dp</dimen>
 	<dimen name="ui_spacing_small">8dp</dimen>
 	<dimen name="ui_spacing_medium">12dp</dimen>
-	<dimen name="ui_spacing_large">16dp</dimen>
+	<dimen name="ui_spacing_big">16dp</dimen>
+	<dimen name="ui_spacing_large">20dp</dimen>
 	 <!-- 筛选标签+弹出框 -->
 	<dimen name="ui_line_selected">4dp</dimen>
 	<dimen name="ui_select_height">50dp</dimen>
@@ -19,7 +20,7 @@
 	<dimen name="ui_listitem_image_margin_left">@dimen/ui_spacing_small</dimen>
 	<dimen name="ui_listitem_image_margin_top">@dimen/ui_spacing_small</dimen>
 	<dimen name="ui_listitem_image_margin_bootom">@dimen/ui_spacing_small</dimen>
-	<dimen name="ui_listitem_image_margin_right">@dimen/ui_spacing_large</dimen>
+	<dimen name="ui_listitem_image_margin_right">@dimen/ui_spacing_big</dimen>
 	<dimen name="ui_listitem_divider_height">1px</dimen>
 	<dimen name="ui_listitem_house_pic_height">82dp</dimen>
 	<!-- 大图浏览相关 -->

@@ -8,13 +8,13 @@
         android:layout_height="wrap_content" >
 
        
-        <com.anjuke.anjukelib.uicomponent.photo.EndlessViewPager
+        <com.anjuke.library.uicomponent.photo.EndlessViewPager
             android:id="@+id/ui_photo_fixed_viewpager"
             android:layout_width="match_parent"
             android:layout_height="200dip"
             android:background="@drawable/ui_photo_bg" />
 
-        <com.anjuke.anjukelib.uicomponent.photo.EndlessCircleIndicator
+        <com.anjuke.library.uicomponent.photo.EndlessCircleIndicator
             android:id="@+id/fixed_indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

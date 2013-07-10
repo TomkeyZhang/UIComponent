@@ -136,7 +136,7 @@
                 android:background="@color/ui_orange" />
 
             <View
-                android:layout_width="@dimen/ui_spacing_large"
+                android:layout_width="@dimen/ui_spacing_big"
                 android:layout_height="50dp"
                 android:background="@color/ui_red" />
         </LinearLayout>

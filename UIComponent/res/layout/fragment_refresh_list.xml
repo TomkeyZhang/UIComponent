@@ -1,4 +1,4 @@
-<com.anjuke.anjukelib.uicomponent.list.RefreshLoadMoreListView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.anjuke.library.uicomponent.list.RefreshLoadMoreListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@android:id/list"
     android:layout_width="match_parent"

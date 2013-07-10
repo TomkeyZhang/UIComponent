@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:theme="@style/AnjukeTheme" >
         <activity
-            android:name="com.anjuke.uicomponent.activity.MainActivity"
+            android:name="com.anjuke.demo.uicomponent.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.anjuke.uicomponent.activity.SelectBarActivity" />
-        <activity android:name="com.anjuke.uicomponent.activity.ProgressActivity" />
-        <activity android:name="com.anjuke.uicomponent.activity.PhotoActivity" />
-        <activity android:name="com.anjuke.uicomponent.activity.TestLargePhotoActivity1" />
-        <activity android:name="com.anjuke.anjukelib.uicomponent.activity.LargePhotoActivity" />
+        <activity android:name="com.anjuke.demo.uicomponent.activity.SelectBarActivity" />
+        <activity android:name="com.anjuke.demo.uicomponent.activity.ProgressActivity" />
+        <activity android:name="com.anjuke.demo.uicomponent.activity.PhotoActivity" />
+        <activity android:name="com.anjuke.demo.uicomponent.activity.TestLargePhotoActivity1" />
+        <activity android:name="com.anjuke.library.uicomponent.activity.LargePhotoActivity" />
     </application>
 
 </manifest>

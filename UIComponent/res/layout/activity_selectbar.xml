@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.anjuke.anjukelib.uicomponent.select.SelectBar
+    <com.anjuke.library.uicomponent.select.SelectBar
         android:id="@+id/select_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"

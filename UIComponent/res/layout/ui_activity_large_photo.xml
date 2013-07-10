@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black" >
 
-    <com.anjuke.anjukelib.uicomponent.photo.EndlessViewPager
+    <com.anjuke.library.uicomponent.photo.EndlessViewPager
         android:id="@+id/ui_photo_evp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -20,22 +20,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40sp"
         android:layout_gravity="bottom"
-        android:layout_margin="@dimen/ui_spacing_small" >
+        android:layout_margin="@dimen/ui_spacing_big" >
 
         <ImageButton
             android:id="@+id/ui_call_phone_btn"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity=""
+            android:background="@drawable/ui_selector_btn_dark"
+            android:padding="@dimen/ui_spacing_medium"
+            android:src="@drawable/ui_call_phone" />
+
+        <View
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher" />
+            android:layout_weight="1.0" />
 
         <TextView
             android:id="@+id/ui_count_tv"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="right|center_vertical"
-            android:text="1/7"
+            android:background="@drawable/ui_bg_photo_grey"
+            android:gravity="center"
+            android:paddingBottom="0dp"
+            android:paddingLeft="@dimen/ui_spacing_small"
+            android:paddingRight="@dimen/ui_spacing_small"
+            android:paddingTop="0dp"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ui_text_large1" />
     </LinearLayout>
